@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Latihan Web02</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+  }
+  .form-box {
+    background: #fff;
+    border: 1px solid #999;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    width: 400px;
+    padding: 15px;
+    margin: 30px auto;
+  }
+  .form-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .form-row label {
+    width: 70px;
+    flex-shrink: 0;
+    padding-top: 3px;
+  }
+  .form-row input[type="text"],
+  .form-row textarea {
+    flex: 1;
+    border: 1px solid #999;
+    padding: 3px 5px;
+    font-family: Arial, sans-serif;
+  }
+  .form-row textarea {
+    resize: none;
+    height: 70px;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-box">
+  <form>
+    <div class="form-row">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="you name here">
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email:</label>
+      <input type="text" id="email" placeholder="your email here">
+    </div>
+
+    <div class="form-row">
+      <label for="address">Address:</label>
+      <textarea id="address">
+
+
+</textarea>
+    </div>
+
+    <div class="form-row">
+      <label for="postcode">Postcode:</label>
+      <input type="text" id="postcode" placeholder="postal code">
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
