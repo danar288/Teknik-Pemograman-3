@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>latihan_Web03</title>
+        <link rel="stylesheet" href="Style.CSS">
+</head> 
+
+<body>
+
+    <header class="navbar" id="home">
+        <div class="navbar__inner">
+            <div class="logo">Logo</div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#service">Service</a>
+                <a href="#abaout">About</a>
+                <a href="#contack">Contack</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero__inner">
+            <p>Hero (Image, Slogan, Kontal, dll</p>
+        </div>
+    </section>
+
+    <section class="service" id="service">
+        <div class="section-inner">
+            <span class="badge">Service</span>
+
+            <div class="cards">
+                <article class="card">
+                    <h3>Heading</h3>
+                    <p>Lorem ipsum dolor sit amet,  consectetur adipisicing elit, sed</p>
+                </article>
+                <article class="card">
+                    <h3>Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</p>
+                </article>
+                <article class="card">
+                    <h3>Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-inner">
+            <span class="badge badge--light">About</span>
+            <p class="about__lede">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <div class="about__grid">
+                <div class="about__text">
+                    <h3>Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="about__chart">
+                    <h3>Performance</h3>
+                    <svg class="chart-line" viewBox="0 0 320 110" preserveAspectRatio="none" aria-hidden="true">
+                        <path d="M2,90 C40,90 45,20 85,20 C125,20 130,95 170,95 C210,95 215,15 255,15 C280,15 290,55 318,55"
+                              fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contack">
+        <div clsss="section-inner">
+            <span class="badge">Contact</span>
+            <form class="contact-form" onsubmit="return false;">
+                <div class="form-row">
+                    <input type="text" name="input1" placeholder="">
+                    <input type="text" name="input2" placeholder="">
+                </div>
+
+                <textarea name="pesan" rows="5" placeholder=""></textarea>
+                <button type="submit" class="btn btn--submit">Kirim</button>
+            </form>
+        </div>
+    </section>
+
+<footer class="footer">
+    <p>Footer</p>
+</footer>
+</body>
+</html>
