@@ -60,6 +60,14 @@
     font-weight: 600;
     font-size: 0.9rem;
     flex-shrink: 0;
+    overflow: hidden;      /* tambahan: supaya foto tidak keluar dari lingkaran */
+  }
+  
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* supaya foto memenuhi lingkaran tanpa gepeng */
+    border-radius: 50%;
   }
   
   .nav-links {
