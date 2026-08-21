@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>latihan_Web03</title>
         <link rel="stylesheet" href="Asset/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
+        <link rel="stylesheet" href="Style.css">    
+</head> 
 
 <body>
 
@@ -22,20 +22,20 @@
         </div>
     </header>
 
-    <section class="hero-section">
+    <section class="hero">
         <div class="hero__inner">
             <p>Hero (Image, Slogan, Kontak, dll)</p>
         </div>
     </section>
 
-    <section class="service-section" id="service">
+    <section class="service" id="service">
         <div class="section-inner">
             <span class="badge-pill">Service</span>
 
             <div class="cards">
                 <article class="card-box">
                     <h3>Heading</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</p>
+                    <p>Lorem ipsum dolor sit amet,  consectetur adipisicing elit, sed</p>
                 </article>
                 <article class="card-box">
                     <h3>Heading</h3>
@@ -49,11 +49,11 @@
         </div>
     </section>
 
-    <section class="about-section" id="about">
+    <section class="about" id="about">
         <div class="section-inner">
             <span class="badge-pill badge-pill--light">About</span>
             <p class="about__lede">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-
+            
             <div class="about__grid">
                 <div class="about__text">
                     <h3>Heading</h3>
@@ -61,8 +61,8 @@
                 </div>
                 <div class="about__chart">
                     <h3>Performance</h3>
-                    <svg class="chart-wave" viewBox="0 0 320 150" aria-hidden="true">
-                        <path d="M10,90
+                    <svg class="chart-wafe" viewBox="0 0 320 150" aria-hidden="true">
+                        <path d="M10,90 
                         C45,55 75,55 110,90
                         C145,125 175,125 210,90
                         C245,55 265,55 290,80
@@ -78,8 +78,8 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <div class="section-inner">
+    <section class="contact" id="contact">
+        <div classs="section-inner">
             <span class="badge-pill">Contact</span>
             <form class="contact-form" onsubmit="return false;">
                 <div class="form-row">
@@ -88,12 +88,12 @@
                 </div>
 
                 <textarea name="pesan" rows="5" placeholder=""></textarea>
-                <button type="submit" class="btn-submit">Kirim</button>
+                <button type="submit" class="btn btn-primary">Kirim</button>
             </form>
         </div>
     </section>
 
-<footer class="footer-section">
+<footer class="footer">
     <p>Footer</p>
 </footer>
 </body>
