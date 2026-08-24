@@ -1,87 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>latihan_Web03</title>
+    <title>web_bootstrep</title>
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="navbar-section" id="home">
+       <header class="navbar-section" id="home">
         <div class="navbar__inner">
-            <nav class="nav-links" id="navLinks">
+            <div class="brand">
+                <div class="logo">
+                    <img src="asset/img/harley.webp" alt="Logo Nufan Garage"></div>
+                <span class="brand__name">Nufan Garage</span></div>
+
+            <nav class="nav-links">
                 <a href="#home">Beranda</a>
                 <a href="#service">Service</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
-
-            <div class="brand">
-                <div class="logo">
-                    <img src="asset/img/harley.webp" alt="Logo">
-                </div>
-                <span class="brand__name">Nufan Garage</span>
-            </div>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
     <section class="hero-section">
         <div class="hero__inner">
             <div class="hero-content">
-                <h1>Judul Hero di Sini</h1>
-                <p>Teks pendukung di sini.</p>
+                <h1>Nufan Garage</h1>
+                <p>Motorcycle Service & Garage</p>
             </div>
         </div>
     </section>
 
-    <section class="service-section" id="service">
+        <section class="service-section" id="service">
         <div class="section-inner">
-            <h2>Service</h2>
-            <p>Konten service diletakkan di sini.</p>
+            <span class="badge-pill">Service</span>
+            <div class="cards">
+                <article class="card-box">
+                    <h3>Engine Service</h3>
+                    <p>Perawatan dan perbaikan mesin motor untuk menjaga performa tetap optimal.</p>
+                </article>
+
+                <article class="card-box">
+                    <h3>Oil Change</h3>
+                    <p>Penggantian oli secara berkala untuk menjaga mesin tetap bekerja dengan baik.</p>
+                </article>
+
+                <article class="card-box">
+                    <h3>Motorcycle Check</h3>
+                    <p>Pemeriksaan kondisi motor secara menyeluruh dan berkala.</p>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section class="about-section" id="about">
+
+        <section class="about-section" id="about">
         <div class="section-inner">
-            <h2>About</h2>
-            <p>Konten about diletakkan di sini.</p>
+            <span class="badge-pill badge-pill--light">About</span>
+            <p class="about__lede">Nufan Garage merupakan bengkel yang berfokus pada perawatan dan perbaikan pada motor Harley Davidson.</p>
+
+            <div class="about__grid">
+                <div class="about__text">
+                    <h3>Nufan Garage</h3>
+                    <p>
+                        Kami menyediakan layanan service,
+                        perawatan, dan pemeriksaan sepeda motor
+                        dengan mengutamakan kualitas dan kepuasan
+                        pelanggan.
+                    </p>
+                </div>
+
+                <div class="about__chart">
+                    <h3>Performance</h3>
+
+                    <svg class="chart-wave"
+                         viewBox="0 0 320 150"
+                         aria-hidden="true">
+
+                        <path d="
+                            M10,90
+                            C45,55 75,55 110,90
+                            C145,125 175,125 210,90
+                            C245,55 265,55 290,80
+                            L290,50
+                            C265,25 245,25 210,60
+                            C175,95 145,95 110,60
+                            C75,25 45,25 10,60
+                            Z
+                        "
+                        fill="#FFFFFF"
+                        stroke="#000000"
+                        stroke-width="4"
+                        stroke-linejoin="round"/>
+
+                    </svg>
+                </div>
+            </div>
         </div>
     </section>
 
+
+    <!-- CONTACT  -->
     <section class="contact-section" id="contact">
         <div class="section-inner">
-            <h2>Contact</h2>
-            <p>Konten contact diletakkan di sini.</p>
+            <span class="badge-pill">Contact</span>
+            <form class="contact-form">
+                <div class="form-row">
+                    <input
+                        type="text"
+                        name="nama"
+                        placeholder="Nama">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email">
+                </div>
+
+               <textarea
+                    name="pesan"
+                    rows="5"
+                    placeholder="Pesan"></textarea>
+
+                <button
+                    type="submit"
+                    class="btn-submit">Kirim</button>
+            </form>
         </div>
     </section>
 
-    <script src="Asset/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        navToggle.addEventListener('click', () => {
-            const isOpen = navLinks.classList.toggle('is-open');
-            navToggle.classList.toggle('is-active', isOpen);
-            navToggle.setAttribute('aria-expanded', isOpen);
-        });
-
-        // Tutup menu otomatis saat salah satu link diklik (khusus mobile)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('is-open');
-                navToggle.classList.remove('is-active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    </script>
+    <!--  FOOTER  -->
+    <footer class="footer-section">
+        <p>© 2026 Nufan Garage. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
