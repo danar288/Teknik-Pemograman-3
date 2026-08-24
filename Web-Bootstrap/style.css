@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, -apple-system, sans-serif;
+    color: #2B2620;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 72px 32px;
+}
+
+/* ===== Navbar ===== */
+.navbar-section {
+    background: #F6DFC1;
+    border-bottom: 2px solid #E7BE8C;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar__inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    order: 2; /* logo + nama tampil di kanan */
+}
+
+.brand__name {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #2B2620;
+    white-space: nowrap;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid #2B2620;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    overflow: hidden; /* supaya foto tidak keluar dari lingkaran */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* supaya foto memenuhi lingkaran tanpa gepeng */
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    order: 1; /* menu tampil di kiri */
+}
+
+.nav-links a:hover {
+    color: #2E5EAA;
+}
+
+/* Tombol hamburger, disembunyikan di layar besar */
+.nav-toggle {
+    display: none;
+    order: 3;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #2B2620;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.is-active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.nav-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.is-active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* ===== Hero ===== */
+.hero-section {
+    background-image: url("asset/img/BG_HARLEY.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh;
+}
+
+.hero__inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 72px 32px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF; /* teks putih agar kontras dengan gambar */
+}
+
+.hero-content h1 {
+    font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+}
+
+.hero-content p {
+    font-size: clamp(0.95rem, 1vw + 0.7rem, 1.15rem);
+    margin-top: 12px;
+}
+
+/* ===== Section lainnya (contoh) ===== */
+.service-section,
+.about-section,
+.contact-section {
+    background: #FFFFFF;
+}
+
+/* =======================================================
+   RESPONSIVE — menyesuaikan tampilan di tablet & HP
+   ======================================================= */
+
+/* Tablet ke bawah */
+@media (max-width: 900px) {
+    .section-inner {
+        padding: 56px 24px;
+    }
+
+    .hero__inner {
+        padding: 56px 24px;
+    }
+}
+
+/* HP / layar kecil */
+@media (max-width: 768px) {
+    .navbar__inner {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+
+    .nav-toggle {
+        display: flex; /* tampilkan tombol hamburger */
+    }
+
+    .nav-links {
+        order: 4;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links.is-open {
+        max-height: 300px; /* buka menu saat toggle aktif */
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        border-top: 1px solid #E7BE8C;
+    }
+
+    .brand {
+        order: 1;
+    }
+
+    .brand__name {
+        font-size: 1rem;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .hero-section {
+        min-height: 45vh;
+    }
+
+    .hero__inner {
+        min-height: 45vh;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+    .section-inner {
+        padding: 40px 16px;
+    }
+
+    .brand__name {
+        display: none; /* sembunyikan teks di layar sangat sempit, cukup logo */
+    }
+}
