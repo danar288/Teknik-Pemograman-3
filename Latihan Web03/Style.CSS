@@ -36,16 +36,17 @@
   .navbar-section {
     background: #F6DFC1;
     border-bottom: 2px solid #E7BE8C;
+    justify-content: space-between;
   }
   
   .navbar__inner {
-    max-width: 1040px;
+    max-width: 1900px;
     margin: 0 auto;
     padding: 18px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 10px;
   }
   
   .logo {
