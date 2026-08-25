@@ -1,143 +1,329 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web_bootstrep</title>
+    <title>Nufan Garage</title>
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-       <header class="navbar-section" id="home">
-        <div class="navbar__inner">
-            <div class="brand">
-                <div class="logo">
-                    <img src="asset/img/harley.webp" alt="Logo Nufan Garage"></div>
-                <span class="brand__name">Nufan Garage</span></div>
+    <!--NAVBAR -->
+    <header id="home">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+            <div class="container py-2">
+                <!-- LOGO + BRAND -->
+                <a class="navbar-brand d-flex align-items-center gap-3"
+                   href="#home">
+                    <img src="asset/img/harley.webp"
+                         alt="Logo Nufan Garage"
+                         width="55"
+                         height="55"
+                         class="rounded-circle border border-dark object-fit-cover">
+                    <span class="fw-bold fs-4">
+                        Nufan Garage
+                    </span>
+                </a>
 
-            <nav class="nav-links">
-                <a href="#home">Beranda</a>
-                <a href="#service">Service</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+                <!-- MENU -->
+                <div class="d-flex gap-4">
+                    <a class="nav-link fw-semibold"
+                       href="#home">Beranda</a>
+                    <a class="nav-link fw-semibold"
+                       href="#service">Service</a>
+                    <a class="nav-link fw-semibold"
+                       href="#about">About</a>
+                    <a class="nav-link fw-semibold"
+                       href="#contact">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- hero -->
+    <!--HERO-->
     <section class="hero-section">
-        <div class="hero__inner">
-           <div class="hero-content">
-                <h1> Nufan Garage</h1>
-                <p>Motorcycle Service & Garage</p>
-           </div>
-        </div>
-    </section>
-
-        <section class="service-section" id="service">
-        <div class="section-inner">
-            <span class="badge-pill">Service</span>
-            <div class="cards">
-                <article class="card-box">
-                    <h3>Engine Service</h3>
-                    <p>Perawatan dan perbaikan mesin motor untuk menjaga performa tetap optimal.</p>
-                </article>
-
-                <article class="card-box">
-                    <h3>Oil Change</h3>
-                    <p>Penggantian oli secara berkala untuk menjaga mesin tetap bekerja dengan baik.</p>
-                </article>
-
-                <article class="card-box">
-                    <h3>Motorcycle Check</h3>
-                    <p>Pemeriksaan kondisi motor secara menyeluruh dan berkala.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-
-        <section class="about-section" id="about">
-        <div class="section-inner">
-            <span class="badge-pill badge-pill--light">About</span>
-            <p class="about__lede">Nufan Garage merupakan bengkel yang berfokus pada perawatan dan perbaikan pada motor Harley Davidson.</p>
-
-            <div class="about__grid">
-                <div class="about__text">
-                    <h3>Nufan Garage</h3>
-                    <p>
-                        Kami menyediakan layanan service,
-                        perawatan, dan pemeriksaan sepeda motor
-                        dengan mengutamakan kualitas dan kepuasan
-                        pelanggan.
+        <div class="container">
+            <div class="row align-items-center min-vh-50">
+                <div class="col-lg-7 text-white">
+                    <span class="badge text-bg-light text-dark px-3 py-2 mb-3">
+                        MOTORCYCLE SERVICE
+                    </span>
+                    <h1 class="display-2 fw-bold"> Nufan Garage </h1>
+                    <p class="lead fs-4 mb-4"> Motorcycle Service & Garage</p>
+                    <p class="mb-4 hero-description">
+                        Tempat perawatan dan perbaikan motor
+                        dengan mengutamakan kualitas,
+                        ketelitian, dan kepuasan pelanggan.
                     </p>
-                </div>
-
-                <div class="about__chart">
-                    <h3>Performance</h3>
-
-                    <svg class="chart-wave"
-                         viewBox="0 0 320 150"
-                         aria-hidden="true">
-
-                        <path d="
-                            M10,90
-                            C45,55 75,55 110,90
-                            C145,125 175,125 210,90
-                            C245,55 265,55 290,80
-                            L290,50
-                            C265,25 245,25 210,60
-                            C175,95 145,95 110,60
-                            C75,25 45,25 10,60
-                            Z
-                        "
-                        fill="#FFFFFF"
-                        stroke="#000000"
-                        stroke-width="4"
-                        stroke-linejoin="round"/>
-
-                    </svg>
+                    <a href="#service"
+                       class="btn btn-light btn-lg px-4 fw-bold">Lihat Service
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT  -->
-    <section class="contact-section" id="contact">
-        <div class="section-inner">
-            <span class="badge-pill">Contact</span>
-            <form class="contact-form">
-                <div class="form-row">
-                    <input
-                        type="text"
-                        name="nama"
-                        placeholder="Nama">
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email">
+    <!--SERVICE-->
+    <section id="service" class="py-5 bg-light">
+        <div class="container py-4">
+            <!-- JUDUL -->
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill text-bg-dark px-3 py-2 mb-3">SERVICE</span>
+                <h2 class="display-6 fw-bold"> Layanan Kami </h2>
+                <p class="text-secondary mt-3">
+                    Perawatan dan pemeriksaan motor
+                    dengan layanan yang terpercaya.
+                </p>
+            </div>
+
+
+            <!-- CARD -->
+            <div class="row g-4">
+                <!-- CARD 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                            </div>
+                            <h3 class="h4 fw-bold">  Engine Service
+                            </h3>
+                            <p class="text-secondary">
+                                Perawatan dan perbaikan mesin motor
+                                untuk menjaga performa tetap optimal.
+                            </p>
+                            <a href="#contact"
+                               class="btn btn-outline-dark mt-3">
+                                Konsultasi
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-               <textarea
-                    name="pesan"
-                    rows="5"
-                    placeholder="Pesan"></textarea>
+                <!-- CARD 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4"> 🛢️ </div>
+                            <h3 class="h4 fw-bold">Oil Change </h3>
+                            <p class="text-secondary">
+                                Penggantian oli secara berkala
+                                untuk menjaga mesin tetap bekerja
+                                dengan baik.
+                            </p>
+                            <a href="#contact"
+                               class="btn btn-outline-dark mt-3">
+                                Konsultasi
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                <button
-                    type="submit"
-                    class="btn-submit">Kirim</button>
-            </form>
+                <!-- CARD 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                                🏍️
+                            </div>
+                            <h3 class="h4 fw-bold">
+                                Motorcycle Check
+                            </h3>
+                            <p class="text-secondary">
+                                Pemeriksaan kondisi motor
+                                secara menyeluruh dan berkala.
+                            </p>
+                            <a href="#contact"
+                               class="btn btn-outline-dark mt-3">
+                                Konsultasi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!--  FOOTER  -->
-    <footer class="footer-section">
-        <p>© 2026 Nufan Garage. All Rights Reserved.</p>
+
+    <!--ABOUT-->
+    <section id="about" class="about-section text-white py-5">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <!-- TEXT -->
+                <div class="col-lg-6">
+                    <span class="badge rounded-pill bg-light text-dark px-3 py-2 mb-3">
+                        ABOUT</span>
+                    <h2 class="display-6 fw-bold mb-4">
+                        Tentang Nufan Garage
+                    </h2>
+                    <p class="lead">
+                        Nufan Garage merupakan bengkel yang
+                        berfokus pada perawatan dan perbaikan
+                        motor Harley Davidson.
+                    </p>
+                    <p class="text-light-emphasis">
+                        Kami mengutamakan kualitas pekerjaan,
+                        ketelitian dalam pemeriksaan, serta
+                        kepuasan pelanggan.
+                    </p>
+
+                    <!-- INFORMASI -->
+                    <div class="row mt-4 g-3">
+                        <div class="col-sm-6">
+                            <div class="border border-light rounded-3 p-3">
+                                <h5 class="fw-bold">  ✓ Professional </h5>
+                                <small>
+                                    Pelayanan yang terpercaya
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="border border-light rounded-3 p-3">
+                                <h5 class="fw-bold"> ✓ Quality </h5>
+                                <small> Mengutamakan kualitas </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERFORMANCE -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg rounded-4">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold text-dark"> Performance </h3>
+                            <p class="text-secondary"> Standar pelayanan Nufan Garage </p>
+
+                            <!-- PROGRESS -->
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-dark fw-semibold"> Engine </span>
+                                    <span class="text-dark">  95%
+                                    </span>
+                                </div>
+                                <div class="progress mt-2"
+                                     role="progressbar">
+                                    <div class="progress-bar bg-dark"
+                                         style="width: 95%">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-dark fw-semibold">
+                                        Maintenance
+                                    </span>
+                                    <span class="text-dark">
+                                        90%
+                                    </span>
+                                </div>
+                                <div class="progress mt-2">
+                                    <div class="progress-bar bg-dark"
+                                         style="width: 90%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-dark fw-semibold">
+                                        Customer Service
+                                    </span>
+                                    <span class="text-dark">
+                                        95%
+                                    </span>
+                                </div>
+                                <div class="progress mt-2">
+                                    <div class="progress-bar bg-dark"
+                                         style="width: 95%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact"
+             class="py-5 bg-light">
+        <div class="container py-4">
+            <!-- JUDUL -->
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill text-bg-dark px-3 py-2 mb-3">
+                    CONTACT
+                </span>
+                <h2 class="display-6 fw-bold">
+                    Hubungi Kami
+                </h2>
+                <p class="text-secondary">
+                    Silakan hubungi kami untuk informasi
+                    service dan perawatan motor.
+                </p>
+            </div>
+
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4 p-md-5">
+                            <form>
+                                <!-- NAMA + EMAIL -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold"> Nama </label>
+                                        <input type="text"
+                                               class="form-control form-control-lg"
+                                               name="nama"
+                                               placeholder="Masukkan nama">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold"> Email
+                                        </label>
+                                        <input type="email"
+                                               class="form-control form-control-lg"
+                                               name="email"
+                                               placeholder="Masukkan email">
+                                    </div>
+                                </div>
+
+                                <!-- PESAN -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">  Pesan </label>
+                                    <textarea name="pesan"
+                                              rows="5"
+                                              class="form-control"
+                                              placeholder="Tuliskan pesan Anda"></textarea>
+                                </div>
+
+                                <!-- BUTTON -->
+                                <button type="submit"
+                                        class="btn btn-dark btn-lg px-4"> Kirim Pesan
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h5 class="fw-bold"> Nufan Garage </h5>
+            <p class="mb-2 text-white-50"> Motorcycle Service & Garage </p>
+            <hr>
+            <small class="text-white-50"> © 2026 Nufan Garage. All Rights Reserved. </small>
+        </div>
     </footer>
 
-   
 </body>
 </html>
