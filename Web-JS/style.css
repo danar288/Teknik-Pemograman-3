@@ -135,6 +135,12 @@ body {
         0 15px 35px rgba(0, 0, 0, 0.15) !important;
 }
 
+.service-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
 .service-icon {
     width: 60px;
     height: 60px;
