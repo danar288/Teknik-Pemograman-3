@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator JavaScript</title>
+</head>
+<body>
+
+<script>
+    let angka1 = prompt("Masukkan angka 1:");
+    let angka2 = prompt("Masukkan angka 2:");
+    let operator = prompt("Masukkan operator (+, -, *, /):");
+
+    angka1 = Number(angka1);
+    angka2 = Number(angka2);
+
+    let hasil;
+
+    if (operator === "+") {
+        hasil = angka1 + angka2;
+    }
+    else if (operator === "-") {
+        hasil = angka1 - angka2;
+    }
+    else if (operator === "*") {
+        hasil = angka1 * angka2;
+    }
+    else if (operator === "/") {
+        if (angka2 === 0 ) {
+            alert("Tidak dapat membagi dengan 0");
+        } else {
+            hasil = angka1 / angka2;
+        }
+    }
+    else {
+        alert("Operator tidak valid");
+    }
+
+    if (hasil !== undefined) {
+        alert("Hasil:" + hasil);
+    }
+    
+    </script>
+</body>
+</html>
