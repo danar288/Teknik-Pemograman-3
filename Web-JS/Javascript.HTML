@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nufan Garage</title>
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -22,7 +25,7 @@
 
                 <!-- MENU -->
                 <div class="d-flex gap-4">
-                    <a class="nav-link fw-semibold" href="#home">Beranda</a>
+                    <a class="nav-link fw-semibold active" href="#home">Beranda</a>
                     <a class="nav-link fw-semibold" href="#service">Service</a>
                     <a class="nav-link fw-semibold" href="#about">About</a>
                     <a class="nav-link fw-semibold" href="#contact">Contact</a>
@@ -32,7 +35,7 @@
     </header>
 
     <!--HERO-->
-    <section class="hero-section">
+    <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center min-vh-50">
                 <div class="col-lg-7 text-white">
@@ -70,10 +73,10 @@
             <!-- CARD -->
             <div class="row g-4">
                 <!-- CARD 1 -->
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
                         <div class="card-body p-4">
-                            <div class="service-icon mb-4">
+                            <div class="service-icon mb-4">🔧
                             </div>
                             <h3 class="h4 fw-bold"> Engine Service </h3>
                             <p class="text-secondary">
@@ -88,7 +91,7 @@
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
                         <div class="card-body p-4">
                             <div class="service-icon mb-4"> 🛢️ </div>
@@ -106,7 +109,7 @@
                 </div>
 
                 <!-- CARD 3 -->
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
                         <div class="card-body p-4">
                             <div class="service-icon mb-4">🏍️</div>
@@ -119,8 +122,21 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- CARD 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4"> 🏍️ </div>
+                            <h3 class="h4 fw-bold"> Motorcycle Sales </h3>
+                            <p class="text-secondary"> Menyediakan motor Harley Davidson dengan
+                                kondisi dan kualitas yang terpercaya. </p>
+                            <a href="https://www.instagram.com/nufan.garage?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
+                                target="_blank" class="btn btn-outline-dark mt-3"> Lihat Motor </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
     </section>
 
 
@@ -277,10 +293,59 @@
         <div class="container">
             <h5 class="fw-bold"> Nufan Garage </h5>
             <p class="mb-2 text-white-50"> Motorcycle Service & Garage </p>
+
+            <!-- SOCIAL MEDIA -->
+            <div class="social-media my-3">
+                <p class="social-title">Social Media</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nufan.garage?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
+                        target="_blank" class="social-link" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@nufan.garage?is_from_webapp=1&sender_device=pc" target="_blank"
+                        class="social-link" aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
             <hr>
             <small class="text-white-50"> © 2026 Nufan Garage. All Rights Reserved. </small>
         </div>
     </footer>
 
+    <!-- Javascript -->
+    <<script>
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+
+        let currentSection = "";
+
+        sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight ) { currentSection=section.getAttribute("id"); } });
+            navLinks.forEach(link=> {
+
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === "#" + currentSection) {
+            link.classList.add("active");
+            }
+
+            });
+
+            });
+            </script>
+
+
 </body>
+
 </html>
