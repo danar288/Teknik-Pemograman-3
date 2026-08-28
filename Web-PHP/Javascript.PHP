@@ -202,7 +202,6 @@ $query_service = mysqli_query($koneksi, "SELECT * FROM service");
                         </span>
                     </button>
 
-
                     <!-- INDICATOR -->
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#motorcycleCarousel" data-bs-slide-to="0" class="active"
