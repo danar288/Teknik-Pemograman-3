@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php';
 
-$query = mysqli_query($koneksi, "SELECT * FROM performance ORDER BY id ASC");
+$query = mysqli_query($conn, "SELECT * FROM performance ORDER BY id ASC");
 
 $data = [];
 

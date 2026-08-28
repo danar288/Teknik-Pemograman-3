@@ -6,11 +6,11 @@ if (isset($_POST['kirim'])) {
     $pesan = $_POST['pesan'];
     $query = "INSERT INTO contact (nama, email, pesan)
               VALUES ('$nama', '$email', '$pesan')";
-    if (mysqli_query($koneksi, $query)) {
+    if (mysqli_query($conn, $query)) {
         echo "<script>
                 alert('Pesan berhasil dikirim!'); </script>";
     } else {
-        echo "Gagal menyimpan pesan: " . mysqli_error($koneksi);
+        echo "Gagal menyimpan pesan: " . mysqli_error($conn);
     }
 }
 ?>
@@ -76,7 +76,7 @@ if (isset($_POST['kirim'])) {
 
     <?php
 // Mengambil semua data dari tabel service
-$query_service = mysqli_query($koneksi, "SELECT * FROM service");
+$query_service = mysqli_query($conn, "SELECT * FROM service");
 ?>
 <!-- SERVICE -->
 <section id="service" class="py-5 bg-light">
