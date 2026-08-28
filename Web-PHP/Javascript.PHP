@@ -1,3 +1,20 @@
+<?php
+include 'koneksi.php';
+if (isset($_POST['kirim'])) {
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $pesan = $_POST['pesan'];
+    $query = "INSERT INTO contact (nama, email, pesan)
+              VALUES ('$nama', '$email', '$pesan')";
+    if (mysqli_query($koneksi, $query)) {
+        echo "<script>
+                alert('Pesan berhasil dikirim!'); </script>";
+    } else {
+        echo "Gagal menyimpan pesan: " . mysqli_error($koneksi);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -57,80 +74,52 @@
         </div>
     </section>
 
-    <!--SERVICE-->
-    <section id="service" class="py-5 bg-light">
-        <div class="container py-4">
+    <?php
+// Mengambil semua data dari tabel service
+$query_service = mysqli_query($koneksi, "SELECT * FROM service");
+?>
+<!-- SERVICE -->
+<section id="service" class="py-5 bg-light">
+    <div class="container py-4">
 
-            <!-- JUDUL -->
-            <div class="text-center mb-5">
-                <span class="badge rounded-pill text-bg-dark px-3 py-2 mb-3">
-                    SERVICE
-                </span>
-                <h2 class="display-6 fw-bold">
-                    Layanan Kami
-                </h2>
-                <p class="text-secondary mt-3">
-                    Perawatan dan pemeriksaan motor
-                    dengan layanan yang terpercaya.
-                </p>
-            </div>
+        <!-- JUDUL -->
+        <div class="text-center mb-5">
+            <span class="badge rounded-pill text-bg-dark px-3 py-2 mb-3">SERVICE</span>
+            <h2 class="display-6 fw-bold">Layanan Kami</h2>
+            <p class="text-secondary mt-3">
+                Perawatan dan pemeriksaan motor
+                dengan layanan yang terpercaya.
+            </p>
+        </div>
 
-            <!-- CARD LAYANAN -->
-            <div class="row g-4">
-
-                <!-- CARD 1 -->
+        <!-- CARD LAYANAN DARI DATABASE -->
+        <div class="row g-4">
+            <?php while ($service = mysqli_fetch_assoc($query_service)) 
+            { ?>
                 <div class="col-md-4">
-
                     <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
-                        <img src="asset/img/service_enggine.jpg" class="card-img-top service-image"
-                            alt="Engine Service">
+
+                        <!-- GAMBAR DARI DATABASE -->
+                        <img src="asset/img/<?php echo htmlspecialchars($service['gambar']); ?>"
+                            class="card-img-top service-image"
+                            alt="<?php echo htmlspecialchars($service['judul']); ?>">
+
                         <div class="card-body p-4">
-                            <h3 class="h4 fw-bold">Engine Service</h3>
-                            <p class="text-secondary">
-                                Perawatan dan perbaikan mesin motor
-                                untuk menjaga performa tetap optimal.
-                            </p>
-                            <a href="#contact" class="btn btn-outline-dark mt-3">Konsultasi</a>
+
+                            <!-- JUDUL DARI DATABASE -->
+                            <h3 class="h4 fw-bold"><?php echo htmlspecialchars($service['judul']); ?></h3>
+
+                            <!-- DESKRIPSI DARI DATABASE -->
+                            <p class="text-secondary"><?php echo htmlspecialchars($service['deskripsi']); ?></p>
+
+                            <a href="#contact" class="btn btn-outline-dark mt-3">
+                                Konsultasi
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- CARD 2 -->
-                <div class="col-md-4">
-
-                    <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
-
-                        <img src="asset/img/ganti_oli.webp" class="card-img-top service-image" alt="Oil Change">
-                        <div class="card-body p-4">
-                            <h3 class="h4 fw-bold">Oil Change</h3>
-                            <p class="text-secondary">
-                                Penggantian oli secara berkala
-                                untuk menjaga mesin tetap bekerja
-                                dengan baik.
-                            </p>
-                            <a href="#contact" class="btn btn-outline-dark mt-3">Konsultasi</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CARD 3 -->
-                <div class="col-md-4">
-
-                    <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
-                        <img src="asset/img/check_enggine.jpg" class="card-img-top service-image"
-                            alt="Motorcycle Check">
-
-                        <div class="card-body p-4">
-                            <h3 class="h4 fw-bold">Motorcycle Check</h3>
-                            <p class="text-secondary">
-                                Pemeriksaan kondisi motor
-                                secara menyeluruh dan berkala.
-                            </p>
-                            <a href="#contact" class="btn btn-outline-dark mt-3">Konsultasi</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
+        </div>
 
             <!--MOTORCYCLE SALES-->
 
@@ -138,18 +127,13 @@
 
                 <!-- JUDUL -->
                 <div class="text-center mb-4">
-                    <span class="badge rounded-pill text-bg-dark px-3 py-2 mb-3">
-                        MOTORCYCLE SALES
-                    </span>
-                    <h2 class="h1 fw-bold">
-                        Motor Tersedia
-                    </h2>
+                    <span class="badge rounded-pill text-bg-dark px-3 py-2 mb-3">MOTORCYCLE SALES</span>
+                    <h2 class="h1 fw-bold">Motor Tersedia</h2>
                     <p class="text-secondary">
                         Lihat koleksi motor yang tersedia
                         di Nufan Garage.
                     </p>
                 </div>
-
 
                 <!-- CAROUSEL -->
                 <div id="motorcycleCarousel" class="carousel slide carousel-motorcycle">
@@ -294,6 +278,7 @@
                     </div>
                 </div>
     </section>
+
     <!-- CONTACT -->
     <section id="contact" class="py-5 bg-light">
         <div class="container py-4">
@@ -316,19 +301,20 @@
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm rounded-4">
                         <div class="card-body p-4 p-md-5">
-                            <form>
+                            <form method="POST" action="">
+
                                 <!-- NAMA + EMAIL -->
                                 <div class="row g-3 mb-3">
                                     <div class="col-md-6">
                                         <label class="form-label fw-semibold"> Nama </label>
                                         <input type="text" class="form-control form-control-lg" name="nama"
-                                            placeholder="Masukkan nama">
+                                            placeholder="Masukkan nama" required>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label class="form-label fw-semibold"> Email</label>
                                         <input type="email" class="form-control form-control-lg" name="email"
-                                            placeholder="Masukkan email">
+                                            placeholder="Masukkan email" required>
                                     </div>
                                 </div>
 
@@ -336,11 +322,11 @@
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold"> Pesan </label>
                                     <textarea name="pesan" rows="5" class="form-control"
-                                        placeholder="Tuliskan pesan Anda"></textarea>
+                                        placeholder="Tuliskan pesan Anda" required></textarea>
                                 </div>
 
                                 <!-- BUTTON -->
-                                <button type="submit" class="btn btn-dark btn-lg px-4"> Kirim Pesan </button>
+                                <button type="submit" name="kirim" class="btn btn-dark btn-lg px-4"> Kirim Pesan </button>
                             </form>
                         </div>
                     </div>
@@ -408,68 +394,76 @@
     </script>
 
     <script src="asset/js/bootstrap.bundle.min.js"></script>
-    <script> const ctx = document.getElementById('performanceChart');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: [
-                    'Engine',
-                    'Maintenance',
-                    'Customer Service'
-                ],
-                datasets: [{
-                    label: 'Performance',
+    <script>
+    const ctx = document.getElementById("performanceChart");
+    const performanceChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: [],
+            datasets: [{
+                label: "Performance",
+                data: [],
+                backgroundColor: "#2B2620",
+                borderRadius: 8,
+                barThickness: 45
+            }]
+        },
 
-                    data: [
-                        95,
-                        90,
-                        95
-                    ],
-                    backgroundColor: '#2B2620',
-                    borderRadius: 8,
-                    barThickness: 45
-
-                }]
-
-            },
-
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            stepSize: 20,
-                            callback: function (value) {
-                                return value + '%';
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: 'Persentase'
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        stepSize: 20,
+                        callback: function(value) {
+                            return value + "%";
                         }
                     },
-
-                    x: {
-                        ticks: {
-                            font: {
-                                weight: '600'
-                            }
-                        }
+                    title: {
+                        display: true,
+                        text: "Persentase"
                     }
                 },
-
-                plugins: {
-                    legend: {
-                        display: false
+                x: {
+                    ticks: {
+                        font: {
+                            weight: "600"
+                        }
                     }
                 }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
             }
-        });
+        }
+    });
 
-    </script>
+
+    function loadPerformance() {
+        fetch("performance.php")
+            .then(response => response.json())
+            .then(data => {
+                performanceChart.data.labels =
+                    data.map(item => item.nama);
+                performanceChart.data.datasets[0].data =
+                    data.map(item => item.nilai);
+                performanceChart.update();
+            })
+            .catch(error => {
+                console.error("Gagal mengambil data:", error);
+            });
+    }
+
+    // Ambil data pertama kali
+    loadPerformance();
+    // Update data setiap 2 detik
+    setInterval(loadPerformance, 2000);
+
+</script>
 </body>
-
 </html>
