@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2026 at 04:12 AM
+-- Generation Time: Aug 28, 2026 at 04:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,8 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `nama`, `email`, `pesan`, `tanggal`) VALUES
 (1, 'danar', 'danar@gmail.com', 'bagusss', '2026-08-28 01:38:31'),
-(2, 'rajeshh', 'rajesh@gamil.com', 'holaaa...', '2026-08-28 01:40:34');
+(5, 'rajeshh', 'rajeshh@gmail.com', 'goodd', '2026-08-28 02:42:15'),
+(6, 'deno', 'deno@gamil.com', 'baguss sekali', '2026-08-28 02:51:10');
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,7 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `performance`
