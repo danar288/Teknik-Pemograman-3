@@ -202,6 +202,7 @@ $query_service = mysqli_query($koneksi, "SELECT * FROM service");
                         </span>
                     </button>
 
+
                     <!-- INDICATOR -->
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#motorcycleCarousel" data-bs-slide-to="0" class="active"
@@ -276,6 +277,7 @@ $query_service = mysqli_query($koneksi, "SELECT * FROM service");
                         </div>
                     </div>
                 </div>
+                
     </section>
 
     <!-- CONTACT -->
@@ -300,7 +302,7 @@ $query_service = mysqli_query($koneksi, "SELECT * FROM service");
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm rounded-4">
                         <div class="card-body p-4 p-md-5">
-                            <form method="POST" action="">
+                        <form method="POST" action="">
 
                                 <!-- NAMA + EMAIL -->
                                 <div class="row g-3 mb-3">
